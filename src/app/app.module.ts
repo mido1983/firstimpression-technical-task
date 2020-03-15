@@ -12,6 +12,7 @@ import { appRoutingModule } from './app.routing';
 import { JwtInterceptor, ErrorInterceptor } from './_helpers';
 import { HomeComponent } from './home';
 import { LoginComponent } from './login';
+import {MomentPipe} from '@app/shared/moment.pipe';
 
 @NgModule({
     imports: [
@@ -23,7 +24,8 @@ import { LoginComponent } from './login';
     declarations: [
         AppComponent,
         HomeComponent,
-        LoginComponent
+        LoginComponent,
+        MomentPipe,
     ],
     providers: [
         { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },

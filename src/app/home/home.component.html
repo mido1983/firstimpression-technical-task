@@ -1,12 +1,42 @@
 ﻿<div class="card mt-4">
-    <h4 class="card-header">You're logged in with Angular 8 & JWT!!</h4>
+    <h4 class="card-header" *ngIf="users">
+       <span>Hello, </span> <span *ngFor="let user of users">{{user.firstName}} {{user.lastName}}</span>
+   </h4>
     <div class="card-body">
 
         <div *ngIf="loading" class="spinner-border spinner-border-sm"></div>
-        <ul *ngIf="users">
-            <li *ngFor="let user of users">{{user.firstName}} {{user.lastName}}</li>
+      <table class="table">
+        <thead class="thead-dark">
+        <tr>
+          <th scope="col">#</th>
+          <th scope="col">First</th>
+          <th scope="col">Last</th>
+          <th scope="col">Handle</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+          <th scope="row">1</th>
+          <td>Mark</td>
+          <td>Otto</td>
+          <td>@mdo</td>
+        </tr>
+        <tr>
+          <th scope="row">2</th>
+          <td>Jacob</td>
+          <td>Thornton</td>
+          <td>@fat</td>
+        </tr>
+        <tr>
+          <th scope="row">3</th>
+          <td>Larry</td>
+          <td>the Bird</td>
+          <td>@twitter</td>
+        </tr>
+        </tbody>
+      </table>
 
-        </ul>
+
     </div>
 </div>
 

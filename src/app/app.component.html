@@ -4,10 +4,14 @@
         <a class="nav-item nav-link" routerLink="/">Home</a>
         <a class="nav-item nav-link" (click)="logout()">Logout</a>
     </div>
+  <div class="date">
+    <span>{{dataService.date | async | moment}}</span>
+  </div>
 </nav>
 
 <!-- main app container -->
 <div class="container">
     <router-outlet></router-outlet>
 </div>
+
 
